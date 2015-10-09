@@ -1,9 +1,3 @@
-### Python template
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
 # C extensions
 *.so
 
@@ -58,4 +52,5 @@ docs/_build/
 # PyBuilder
 target/
 
-# Created by .ignore support plugin (hsz.mobi)
+.idea/
+*.pyc
