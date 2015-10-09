@@ -1,6 +1,7 @@
 from room import Room
 from datetime import datetime, timedelta
 
+
 def test_all():
     test_get_temperature()
     test_get_people()
@@ -18,6 +19,8 @@ def test_get_temperature():
 
     room.set_temperature(datetime.now() + timedelta(hours=9), 0, 50)
     assert(room.get_temperature(datetime.now() + timedelta(hours=9)) == 50)
+
+    assert(room.get_temperature(datetime.now() + timedelta(days=9)) is None)
 
 
 def test_get_people():
@@ -53,3 +56,5 @@ def test_get_noise():
 
     room.set_noise(datetime.now() + timedelta(hours=1), 0, 30)
     assert(room.get_noise(datetime.now() + timedelta(hours=1)) == 30)
+
+    assert(room.get_temperature(datetime.now() + timedelta(days=9)) is None)
