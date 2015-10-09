@@ -22,9 +22,9 @@ class InOutAdaptor(Adaptor):
 
         timedif = self.sensor_out_timestamp - self.sensor_in_timestamp
 
-        if timedif > 0 and timedif < self.maximum_delta: #out
+        if timedif >= 0 and timedif < self.maximum_delta: #out
             for listener in self.get_listeners():
                 listener.remove_person(ts,self.adaptor_id)
-        elif timedif < 0 and timedif < -self.maximum_delta: #in
+        elif timedif < 0 and timedif > -self.maximum_delta: #in
             for listener in self.get_listeners():
                 listener.add_person(ts,self.adaptor_id)
