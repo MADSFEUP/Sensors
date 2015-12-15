@@ -1,5 +1,6 @@
 __author__ = 'augusto'
 
+
 class Adaptor(object):
 
     def __init__(self,adaptor_id):
@@ -7,7 +8,10 @@ class Adaptor(object):
         self.adaptor_id = adaptor_id
 
     def start_reading(self):
-        return True
+        return
+
+    def stop_reading(self):
+        return
 
     def add_listener(self, room):
         self.listeners.append(room)

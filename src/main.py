@@ -13,6 +13,13 @@ def entry_point(error):
     )), 400
 
 
+@app.route("/people/")
+def people():
+    people = this_room.get_people()
+    response = dict(people=people)
+    code = 200
+    return flask.jsonify(response), code
+
 @app.route("/temperature/<time>")
 def temperature(time):
     temperature = this_room.get_temperature(time)
