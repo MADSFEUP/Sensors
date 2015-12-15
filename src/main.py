@@ -1,9 +1,13 @@
 import flask
 
 import src
+from src.DistanceSensorImp import DistanceSensorImp
+from src.InOutAdaptor import InOutAdaptor
 
 app = flask.Flask(__name__)
 this_room = src.Room()
+adaptor = InOutAdaptor(1,200,1000,DistanceSensorImp(1),DistanceSensorImp(2))
+adaptor.add_listener(this_room)
 
 
 @app.errorhandler(404)
