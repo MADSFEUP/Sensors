@@ -7,8 +7,8 @@ class InOutAdaptor(Adaptor):
         super(InOutAdaptor,self).__init__(adaptor_id)
         self.sensor_in_timestamp = 0
         self.sensor_out_timestamp = 0
-        self.maximum_distance = 100 #cm
-        self.maximum_delta = 100 #ms
+        self.maximum_distance = 100 #cm TODO const
+        self.maximum_delta = 100 #ms TODO const
 
     def new_value_notification(self,sensor_id,value):
 

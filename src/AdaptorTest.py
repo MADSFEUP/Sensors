@@ -11,7 +11,7 @@ class InOutAdaptorMock(InOutAdaptor):
         super(InOutAdaptorMock,self).__init__(adaptor_id)
 
     def simulateEntrance(self):
-        self.new_value_notification(1,90) #out
+        self.new_value_notification(1,90) #out TODO use sensor id const
         self.new_value_notification(0,80) #in
 
 class AdaptorTest(unittest.TestCase):
