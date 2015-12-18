@@ -1,11 +1,11 @@
 import flask
 
-import src
-from src.DistanceSensorImp import DistanceSensorImp
-from src.InOutAdaptor import InOutAdaptor
+from DistanceSensorImp import DistanceSensorImp
+from InOutAdaptor import InOutAdaptor
+from room import Room
 
 app = flask.Flask(__name__)
-this_room = src.Room()
+this_room = Room()
 adaptor = InOutAdaptor(1,200,1000,DistanceSensorImp(1),DistanceSensorImp(2))
 adaptor.add_listener(this_room)
 
